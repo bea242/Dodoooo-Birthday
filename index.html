@@ -8,6 +8,7 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
  font-family:Georgia,serif;
@@ -17,28 +18,39 @@ body{
  min-height:100vh;
  padding:20px 14px;
 }
+
 .screen{
  display:none;
  max-width:700px;
  margin:45px auto;
- animation:appear 1s ease;
+ animation:appear .8s ease;
 }
+
 .screen.active{display:block}
+
 @keyframes appear{
  from{opacity:0;transform:translateY(15px)}
  to{opacity:1;transform:translateY(0)}
 }
+
 h1{color:#559acb;font-size:clamp(28px,7vw,43px)}
 h2{color:#6aa9d5}
 p{line-height:1.8}
+
 button{
- border:0;border-radius:30px;
- background:#79bce8;color:white;
- padding:13px 25px;font-size:16px;
- margin:12px 5px;cursor:pointer;
+ border:0;
+ border-radius:30px;
+ background:#79bce8;
+ color:white;
+ padding:13px 25px;
+ font-size:16px;
+ margin:12px 5px;
+ cursor:pointer;
  box-shadow:0 5px 14px #80b6d955;
 }
+
 button:hover{background:#559fd4}
+
 .card{
  background:#ffffffc9;
  padding:25px 20px;
@@ -46,29 +58,48 @@ button:hover{background:#559fd4}
  box-shadow:0 8px 25px #8cb9d933;
  margin:20px auto;
 }
+
 .heart{font-size:28px;letter-spacing:8px}
+
 .music{
- position:fixed;top:12px;right:12px;
- z-index:5;background:#fff;color:#559acb;
+ position:fixed;
+ top:12px;
+ right:12px;
+ z-index:5;
+ background:#fff;
+ color:#559acb;
  border:1px solid #c4e4fa;
 }
+
 .envelope{
- width:230px;height:145px;
- background:#8dc8ef;border-radius:8px;
- margin:35px auto;position:relative;
+ width:230px;
+ height:145px;
+ background:#8dc8ef;
+ border-radius:8px;
+ margin:35px auto;
+ position:relative;
  cursor:pointer;
  box-shadow:0 8px 20px #669acb55;
 }
+
 .envelope:before{
- content:"";position:absolute;top:0;left:0;
+ content:"";
+ position:absolute;
+ top:0;
+ left:0;
  border-left:115px solid transparent;
  border-right:115px solid transparent;
  border-top:85px solid #c4e6fb;
 }
+
 .envelope:after{
- content:"💌";position:absolute;
- top:75px;left:95px;font-size:35px;
+ content:"💌";
+ position:absolute;
+ top:75px;
+ left:95px;
+ font-size:35px;
 }
+
 .letter{
  background:#fff;
  padding:25px 20px;
@@ -79,13 +110,21 @@ button:hover{background:#559fd4}
  overflow-wrap:anywhere;
  box-shadow:0 8px 25px #719fc533;
 }
+
 .signature{
  font-size:clamp(30px,8vw,55px);
  color:#559fd4;
  font-weight:bold;
  margin-top:35px;
 }
+
 .small{font-size:14px;color:#7598b2}
+
+@media(max-width:480px){
+ .screen{margin:55px auto 25px}
+ .card{padding:20px 16px}
+ .letter{padding:20px 16px;font-size:15px}
+}
 </style>
 </head>
 
@@ -95,7 +134,6 @@ button:hover{background:#559fd4}
 ♫ Play Music
 </button>
 
-<!-- BIRTHDAY OPENING -->
 <section class="screen active" id="s1">
 <div class="heart">♡ 💙 ♡</div>
 <h1>HAPPIEST BIRTHDAYYYYY!</h1>
@@ -108,9 +146,8 @@ button:hover{background:#559fd4}
 <button onclick="go(2)">Open Your Surprise →</button>
 </section>
 
-<!-- CUTE CHEESY MESSAGES -->
 <section class="screen" id="s2">
-<h1>A Little Something For You for ur lov I'm meee 👉🏻👈🏻😶‍🌫️💙</h1>
+<h1>A Little Something For You, for ur lov I'm meee 👉🏻👈🏻😶‍🌫️💙</h1>
 <div class="card">
 <h2>Dear Dodo,</h2>
 <p>Today is all about you, so please behave like the birthday boy you are. 😂</p>
@@ -130,7 +167,6 @@ button:hover{background:#559fd4}
 <button onclick="go(3)">One More Thing →</button>
 </section>
 
-<!-- LITTLE NOTE -->
 <section class="screen" id="s3">
 <div class="heart">🩵 ✨ 🩵</div>
 <h1>Before The Letter...</h1>
@@ -142,7 +178,6 @@ button:hover{background:#559fd4}
 <button onclick="go(4)">Continue →</button>
 </section>
 
-<!-- PROMISE -->
 <section class="screen" id="s4">
 <div class="heart">♡ 💙 ♡</div>
 <h1>One Little Promise...</h1>
@@ -154,7 +189,6 @@ button:hover{background:#559fd4}
 <button onclick="go(5)">I Promise 🤞🏻</button>
 </section>
 
-<!-- ENVELOPE -->
 <section class="screen" id="s5">
 <h1>Your Letter Is Here 💌</h1>
 <p>A little something from your Brainu, made just for you.</p>
@@ -162,21 +196,48 @@ button:hover{background:#559fd4}
 <p class="small">Tap the envelope to open it ♡</p>
 </section>
 
-<!-- LETTER -->
 <section class="screen" id="s6">
 <h1>For My Dodo ❤️</h1>
-<div class="letter">
-HAPPIEST BIRTHDAYYYYY DAWOOOOOD, MERAY DODOOO! 😭❤️🎂
-Acha g, finally apka birthday aa hi gya. Sb sy phly toh congratulations ke ap ek aur saal baray ho gaye ho, lkin plz age ke sath thori si maturity bhi le ao. Wsy mujy zyda umeed nhi hai. 😂😭Honestly Dodo, mujy smjh nhi aya ky apko birthday wish karte hue tareef karu ya apni complaints ki list khol kar baith jau, kyuki complaints toh itni hain ky shyd birthday ka poora din hi kam par jaye. 😭Ap aur apki narazgiyan! Matlab glti chahy kisi ki bhi ho, naraz aap ne hi hona hota hai. Aur mujy manane ki baari aye toh janab khud hi rooth kar baith jaate hain hn mai bhi hoti lkinnnn mekoooo koi manata hi nhi🥲. Although Ab banda apko manaye ya apna gussa control kare? 😂 Kbhi kbhi toh dil krta hai apko ek manual gift karun jis par likha ho: "How to handle your own nakhray!" 😭Aur apka busy schedule toh mashallah international level ka hai. Kabhi koi kaam, kabhi koi masroofiyat, kabhi koi bahana. Aapke paas har cheez ka time hota hai bas mujhse baat karne ka time pata nhi kis calendar mein milta hai.🥲Lekin phir kbhi kbhi ap itna pyar dikha dete ho ke meri sari complaints kuch dair ke liye chup ho jati hain. Aur bas isi "kbhi kbhi" ky chkar mein mai phir se apki baton mein aa jati hon. 😭❤️Sach batau toh hum dono ki laraiyan bhi ajeeb hain. Main gussa karti hon, ap naraz ho jaate ho... mai bhi hoti hu😅, phir baat aur barh jaati hai, aur end mein pata nahi kis baat par dobara hansne lagte hain. Hum dono ko shyd ek dusre ko smjhne se phly apna gussa smjhne ki zarorat hai. 😂Lkin in saari complaints ky bawajood, ap mere liye special ho. Main chahti hon ky ap apni life mein bht aagy jao, apne saare dreams poore karo, khush raho aur hamesha apne ap par proud feel karo. May God bless you with happiness, success, gud health & everything beautiful that uhh deserve.Aur han, meri ek choti si birthday wish apne liye bhi hai: kaash aap apne busy schedule mein se thora sa time nikalna seekh jaayein, har baat par naraz hona kam kar dein aur kbhi kbhi bina kisi waja ky bhi mujy mana liya kro🙏😭Itni bhi kya egooo hai baiii? Birthday aapka hai, attitude kyu mera test ho raha hai? 😭😂I hope humari ye silly and unusual fights, endless complaints aur beech beech mein hone wala pyar yu hi chlta rhy, bss thori si understanding aur thora sa extra time bhi add ho jaye.But honestly, Dawood, jokes apart, I really hope this birthday brings uhh the kind of happiness that stays. I hope uhh get everything you've ever prayed for, everything you've silently wished for and even those little things uhh've never told anyone about. May God make your journey beautiful, ur heart peaceful and ur future brighter than you've ever imagined.I hope uhh never lose that little spark in uhh, never stop dreaming big and never let the difficult days make uhh forget how much potential uhh have. I wish to see uhh growing, achieving things, becoming a better version of yourself and making yourself proud. You deserve to experience so many beautiful moments in lifeand I genuinely hope this year gives you plenty of them.And you know what? If I could wrap up happiness, success, peace and a million beautiful moments in one gift box, I'd happily give that entire box to you. Although, knowing you, you'd probably ask me where the actual expensive gift is. 😭😂I don't know what the future holds, but I really hope it holds countless beautiful memories for us. More birthdays, more pictures, more random laughter and more moments that we'll look back at someday and smile about.Ap hamesha khush raho, apny dreams achievekaro aur life mein itna aage tak jao ke apko khud par fakhar ho....And lastly, Dodo, I hope you always have a reason to smile, because if there's one thing I wish for you today, it's a genuinely happy heart. Happy Birthday, once again. You deserve all the love and happiness in the world. ❤️lysmmmmmmmmmmmmmmm😚😚😚😚😚😚😚🫂.
+<div class="letter">HAPPIEST BIRTHDAYYYYY DAWOOOOOD, MERAY DODOOO! 😭❤️🎂
+
+Acha g, finally apka birthday aa hi gya. Sb sy phly toh congratulations ke ap ek aur saal baray ho gaye ho, lkin plz age ke sath thori si maturity bhi le ao. Wsy mujy zyda umeed nhi hai. 😂😭
+
+Honestly Dodo, mujy smjh nhi aya ky apko birthday wish karte hue tareef karu ya apni complaints ki list khol kar baith jau, kyuki complaints toh itni hain ky shyd birthday ka poora din hi kam par jaye. 😭
+
+Ap aur apki narazgiyan! Matlab glti chahy kisi ki bhi ho, naraz aap ne hi hona hota hai. Aur mujy manane ki baari aye toh janab khud hi rooth kar baith jaate hain hn mai bhi hoti lkinnnn mekoooo koi manata hi nhi🥲. Although Ab banda apko manaye ya apna gussa control kare? 😂 Kbhi kbhi toh dil krta hai apko ek manual gift karun jis par likha ho: "How to handle your own nakhray!" 😭
+
+Aur apka busy schedule toh mashallah international level ka hai. Kabhi koi kaam, kabhi koi masroofiyat, kabhi koi bahana. Aapke paas har cheez ka time hota hai bas mujhse baat karne ka time pata nhi kis calendar mein milta hai.🥲
+
+Lekin phir kbhi kbhi ap itna pyar dikha dete ho ke meri sari complaints kuch dair ke liye chup ho jati hain. Aur bas isi "kbhi kbhi" ky chkar mein mai phir se apki baton mein aa jati hon. 😭❤️
+
+Sach batau toh hum dono ki laraiyan bhi ajeeb hain. Main gussa karti hon, ap naraz ho jaate ho... mai bhi hoti hu😅, phir baat aur barh jaati hai, aur end mein pata nahi kis baat par dobara hansne lagte hain. Hum dono ko shyd ek dusre ko smjhne se phly apna gussa smjhne ki zarorat hai. 😂
+
+Lkin in saari complaints ky bawajood, ap mere liye special ho. Main chahti hon ky ap apni life mein bht aagy jao, apne saare dreams poore karo, khush raho aur hamesha apne ap par proud feel karo. May God bless you with happiness, success, gud health & everything beautiful that uhh deserve.
+
+Aur han, meri ek choti si birthday wish apne liye bhi hai: kaash aap apne busy schedule mein se thora sa time nikalna seekh jaayein, har baat par naraz hona kam kar dein aur kbhi kbhi bina kisi waja ky bhi mujy mana liya kro🙏😭
+
+Itni bhi kya egooo hai baiii? Birthday aapka hai, attitude kyu mera test ho raha hai? 😭😂
+
+I hope humari ye silly and unusual fights, endless complaints aur beech beech mein hone wala pyar yu hi chlta rhy, bss thori si understanding aur thora sa extra time bhi add ho jaye.
+
+But honestly, Dawood, jokes apart, I really hope this birthday brings uhh the kind of happiness that stays. I hope uhh get everything you've ever prayed for, everything you've silently wished for and even those little things uhh've never told anyone about. May God make your journey beautiful, ur heart peaceful and ur future brighter than you've ever imagined.
+
+I hope uhh never lose that little spark in uhh, never stop dreaming big and never let the difficult days make uhh forget how much potential uhh have. I wish to see uhh growing, achieving things, becoming a better version of yourself and making yourself proud. You deserve to experience so many beautiful moments in lifeand I genuinely hope this year gives you plenty of them.
+
+And you know what? If I could wrap up happiness, success, peace and a million beautiful moments in one gift box, I'd happily give that entire box to you. Although, knowing you, you'd probably ask me where the actual expensive gift is. 😭😂
+
+I don't know what the future holds, but I really hope it holds countless beautiful memories for us. More birthdays, more pictures, more random laughter and more moments that we'll look back at someday and smile about.
+
+Ap hamesha khush raho, apny dreams achievekaro aur life mein itna aage tak jao ke apko khud par fakhar ho....
+
+And lastly, Dodo, I hope you always have a reason to smile, because if there's one thing I wish for you today, it's a genuinely happy heart. Happy Birthday, once again. You deserve all the love and happiness in the world. ❤️lysmmmmmmmmmmmmmmm😚😚😚😚😚😚😚🫂.
 
 I hope someday when you look back at this little website, you don't just remember your birthday. I hope you remember that someone took time to create all these little surprises just to make your day a little more special. Every little detail has a reason, and that reason is you.
 
-And please, Dodo, after reading this entire essay, don't you dare say 'itna lamba ya ye kya tha?' 😭 I have used half of my brain, all my patience and probably my entire complaints collection to make this birthday special for Abhiiii bari mushkilon sy control krky banaya😂❤️
-</div>
+And please, Dodo, after reading this entire essay, don't you dare say 'itna lamba ya ye kya tha?' 😭 I have used half of my brain, all my patience and probably my entire complaints collection to make this birthday special for Abhiiii bari mushkilon sy control krky banaya😂❤️</div>
 <button onclick="go(7)">One Last Thing... 💙</button>
 </section>
 
-<!-- ENDING -->
 <section class="screen" id="s7">
 <div class="heart">♡ 🩵 ♡</div>
 <h1>And That's Not All...</h1>
@@ -192,42 +253,73 @@ And please, Dodo, after reading this entire essay, don't you dare say 'itna lamb
 
 <script>
 function go(n){
- document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.querySelectorAll('.screen').forEach(s=>{
+  s.classList.remove('active');
+ });
  document.getElementById('s'+n).classList.add('active');
  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// Original gentle instrumental melody using browser audio
 let audioCtx, melodyTimer, playing=false, note=0;
-const notes=[261.63,329.63,392,329.63,293.66,349.23,392,349.23];
+
+const notes=[
+ 261.63,329.63,392,329.63,
+ 293.66,349.23,392,349.23
+];
+
 function playNote(){
- if(!playing)return;
- if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+ if(!playing || !audioCtx)return;
+
  const osc=audioCtx.createOscillator();
  const gain=audioCtx.createGain();
+
  osc.type='sine';
  osc.frequency.value=notes[note%notes.length];
+
  gain.gain.setValueAtTime(0.0001,audioCtx.currentTime);
  gain.gain.exponentialRampToValueAtTime(0.045,audioCtx.currentTime+0.05);
  gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.55);
- osc.connect(gain);gain.connect(audioCtx.destination);
- osc.start();osc.stop(audioCtx.currentTime+0.6);
+
+ osc.connect(gain);
+ gain.connect(audioCtx.destination);
+
+ osc.start();
+ osc.stop(audioCtx.currentTime+0.6);
  note++;
 }
-function toggleMusic(){
+
+async function toggleMusic(){
  const btn=document.getElementById('musicBtn');
- if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();
- if(audioCtx.state==='suspended')audioCtx.resume();
- playing=!playing;
- if(playing){
-  playNote();
-  melodyTimer=setInterval(playNote,650);
-  btn.textContent='♫ Pause Music';
- }else{
-  clearInterval(melodyTimer);
+
+ try{
+  if(!audioCtx){
+   const AC=window.AudioContext||window.webkitAudioContext;
+   if(!AC){
+    btn.textContent='Music unavailable';
+    return;
+   }
+   audioCtx=new AC();
+  }
+
+  if(audioCtx.state==='suspended'){
+   await audioCtx.resume();
+  }
+
+  playing=!playing;
+
+  if(playing){
+   playNote();
+   melodyTimer=setInterval(playNote,650);
+   btn.textContent='♫ Pause Music';
+  }else{
+   clearInterval(melodyTimer);
+   btn.textContent='♫ Play Music';
+  }
+ }catch(error){
   btn.textContent='♫ Play Music';
  }
 }
 </script>
+
 </body>
 </html>
